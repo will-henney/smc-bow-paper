@@ -32,6 +32,7 @@
 \newcommand\Raman{\ensuremath{_{\text{Raman}}}}
 \def\th#1#2{\(\theta^{#1}\)\,Ori~#2}
 \newcommand\wn{\ensuremath{\tilde{\nu}}}
+\newcommand\Wav[1]{\ensuremath{\lambda #1}}
 
 % Chemical formulae
 \newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
@@ -41,8 +42,11 @@
 \newcommand\Level[4]{\ensuremath{\mathrm{#1\ ^{#2}#3_{#4}}}}
 
 \newcommand\ha{\ensuremath{\text{H}\alpha}}
+\newcommand\hb{\ensuremath{\text{H}\beta}}
 \newcommand\lya{\ensuremath{\text{Ly}\alpha}}
 \newcommand\lyb{\ensuremath{\text{Ly}\beta}}
+
+\newcommand{\wind}{\ensuremath{_{\text{w}}}}
 
 \begin{document}
 \title{A highly ionized stellar bow shock in the Small Magellanic Cloud}
@@ -62,12 +66,60 @@
   Emission line images of \ion{He}{2} and [\ion{Ar}{4}], etc.
 \end{abstract}
 
-\keywords{Atomic physics; Radiative transfer; Photodissociation regions}
+\keywords{Atomic physics; Circumstellar matter; Stars: winds, outflows}
 
 %\object{M42}
 
 \section{Introduction}
 \label{sec:introduction}
+
+The interaction of a star's wind with the surrounding medium
+can result in an arc-shaped circumstellar emission nebula,
+frequently referred to as a bow shock \citep{Gull:1979a, van-Buren:1988a}.
+Stellar bow shocks are found around a wide variety of different stars,
+including pre-main sequence stars \citep{Bally:2001a, Henney:2013a},
+neutron stars \citep{Cordes:1993a},
+and cool giants and supergiants \citep{Sahai:2010a, Cox:2012a},
+but they are most commonly associated with hot luminous OB stars
+\citep{van-Buren:1995a, Kobulnicky:2016a}.
+Bow shocks are most frequently observed via their infrared continuum emission
+\citep{Meyer:2016a},
+which arises from dust grains that are heated by the
+stellar radiation field \citep{Draine:2007a},
+but specific classes of bow shock have also been identified
+via multiple thermal and non-thermal emission mechanisms
+that trace gas and plasma components.
+The emission arcs are most commonly interpreted as due to
+the hydrodynamic interaction induced by
+supersonic relative motion of the star with respect to the ambient material
+\citep{Wilkin:1996a},
+but models involving a subsonic interaction have also been proposed
+\citep{Mackey:2015a}.
+Also, the role of the stellar wind ram pressure in supporting the arc
+may be replaced by radiation pressure in some cases, see
+\citet{Henney:2019a, Henney:2019b, Henney:2019c}. 
+
+Stellar bow shocks can be used to estimate stellar wind mass loss rates
+by applying momentum-balance arguments
+\citep{Gvaramadze:2012a, Kobulnicky:2018a, Kobulnicky:2019a, Henney:2019c}.
+These provide an important check on more traditional spectroscopic methods
+\citep{Hillier:2020v},
+since the systematic uncertainties and biases are different.
+Line-driven wind theory for hot stars
+predicts that momentum-loss rates should increase with metallicity, \(Z\),
+as \(\dot{M} V\wind \propto Z^{n}\) with \(n = 0.6\)--\(0.8\)
+\citep{Vink:2001a, Vink:2021h, Bjorklund:2021k}
+for the most luminous stars (\(L > \SI{e6}{L_\odot}\)).
+
+In the Milky Way, OB stellar bow shocks can be divided into two classes:
+\emph{runaways} \citep{Blaauw:1961a}
+and \emph{weathervanes} \citep{Povich:2008a}.
+The former have supersonic space velocities due to
+ejection from a binary system or stellar cluster
+\citep{Hoogerwerf:2001a, Renzo:2019b},
+while the latter have low space velocities and are interacting
+with streaming motions of the local interstellar medium,
+such as champagne flows \citep{Tenorio-Tagle:1979a}.
 
 
 
@@ -160,6 +212,20 @@
     }
   \label{fig:T-oiii-ariv}
 \end{figure}
+
+
+
+Apart from the inner rim of the bow shock,
+there is no diffuse \heii{} emission in the core of NGC~346,
+or in the western side of the N66 region.
+The eastern side of N66, on the other hand,
+shows extensive \heii{} \Wav{4686} emission,
+as can be seen at offsets from \num{-200} to \SI{-50}{arcsec}
+in Figure~\ref{fig:oiii-ratio}b.
+The eastern side of N66 also shows a ten times higher [\ion{Fe}{3}] / \hb{} ratio
+and disturbed kinematics in low-ionization lines such as \sii{}.
+All these are probably due to a foreground supernova remnant SNR~B0057\(-72.2\) \citep{Ye:1991d}
+that overlaps with this part of the nebula \citep{Chu:1988m, Naze:2002q, Danforth:2003m}.
 
 
 
