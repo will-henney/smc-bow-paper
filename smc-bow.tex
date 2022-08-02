@@ -63,7 +63,10 @@
   We report the discovery of a parsec-scale stellar bow shock
   associated with the O2\,III(f) star Walborn~3
   in the cluster NGC~346 of the Small Magellanic Cloud.
-  Emission line images of \ion{He}{2} and [\ion{Ar}{4}], etc.
+  The bow shock is most clearly detected in
+  \ion{He}{2} and [\ion{Ar}{4}] emission lines
+  but is also seen at mid-infrared wavelengths
+  between \SI{12}{\micron} and \SI{24}{\micron}.
 \end{abstract}
 
 \keywords{Atomic physics; Circumstellar matter; Stars: winds, outflows}
@@ -132,10 +135,9 @@ such as champagne flows \citep{Tenorio-Tagle:1979a}.
 In this paper, we report the discovery of just such a bow shock
 inside the massive stellar cluster NGC~346,
 which excites the \hii{} region N66 \citep{Henize:1956v}.
-
-The very early-type star Walborn~3 (W~3) \citep{Walborn:1986y},
+The bow shock is associated with the very early-type star Walborn~3 (W~3) \citep{Walborn:1986y},
 also known as MPG~355 \citep{Massey:1989p}
-with spectral type ON2 III(f*) \citep{Heydari-Malayeri:2010i}
+with spectral type ON2 III(f*) \citep{Heydari-Malayeri:2010i}. 
 
 Atmosphere models of \citet{Rivero-Gonzalez:2012w}
 
@@ -147,14 +149,136 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
   \centering
   \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-4-panel}
   \caption{
-    MUSE emission line images of the cort of NGC~346.
+    MUSE emission line images of the core of NGC~346.
     (a)~High-ionization emission from the bow shock.
-    (b)~Medium to low-ionization emission from the surrounding \hii{} region. 
-    (c)~Location of the MUSE field within the wider nebula.
-    (d)~Zoom on the bow shock region in the light of \ha{} emission,
+    Red shows \heii{} \Wav{4686},
+    green shows \ariv{} \Wav{4741},
+    blue shows continuum emission at \SI{4700}{\angstrom}
+    (mainly starlight).
+    The white star indicates the position of W~2.
+    (b)~Medium to low-ionization emission
+    from the surrounding \hii{} region.
+    Red shows [\ion{O}{1}] \Wav{6300},
+    green shows [\ion{S}{2}] \Wav{6731},
+    blue shows [\ion{S}{3}] \Wav{9069}
+    (c)~Location of the MUSE field within the wider nebula against
+    a background \ha{} image from HST-ACS in the F658N filter
+    (d)~Zoom of panel~c showing detail of the bow shock region
+    in the light of \ha{} emission, with superimposed contours of
+    \heii{} (red) and \ariv{} (green). 
     }
   \label{fig:muse-acs-multipanel}
 \end{figure*}
+
+\begin{figure*}[p]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figs/ngc346-bow-shock-brightness-cuts}
+  \caption{
+    Emission line surface brightness profiles along an East--West cut across the bow shock,
+    derived from MUSE integral field spectra. 
+    }
+  \label{fig:brightness-cuts}
+\end{figure*}
+The main observational data used in this paper comprise
+an archival integral field spectral cube of NGC~346
+obtained with the MUSE spectrograph \citep{Bacon:2010a, Bacon:2014a}
+on the VLT as part of program 098.D-0211(A) (PI:  W.-R. Hamann). 
+The field of view is \SI{60}{arcsec} times \SI{60}{arcsec} with
+spaxel size of \SI{0.2}{arcsec} and estimated seeing
+full-width half maximum (FWHM) width of \SI{0.961}{arcsec}.
+The spectral range is \SI{4595}{\angstrom} to \SI{9366}{\angstrom}
+sampled at \SI{1.25}{\angstrom.pix^{-1}} and the
+spectral resolving power varies from \(R \approx 2000\) in the blue
+to \(R \approx 4000\) in the red.
+We use reduced data from the standard ESO pipeline processing
+\citep{Weilbacher:2020a},
+co-added across multiple observations obtained on \mbox{2016-08-22}
+with a total effective exposure time of \SI{12600}{s}.
+
+We divide the spectral range into sections of width \SI{800}{\angstrom}
+and fit a 6th order polynomial to the continuum
+in line-free wavelengths of each section,
+using an independent fit for each spaxel.
+We then extract individual emission lines (or close blends)
+from the continuum-subtracted spectra using \SI{5}{\angstrom} windows,
+centered on the expected wavelength of each line
+in the systemic frame of the nebula
+(heliocentric velocity \(V \approx \SI{+160}{km.s^{-1}}\)).
+We correct for an over-subtraction of the sky background,
+which is apparent in the pipeline-processed data cube.
+We establish accurate zero points for all lines by checking that
+multiple line ratios tend towards physically reasonable asymptotes
+as the brightness tends towards zero.
+
+We use the observed Balmer decrement between \ha{} and \hb{} to
+correct all lines for foreground dust extinction, assuming
+an SMC-appropriate reddening law with \(R_V = 2.74\)
+\citep{Fitzpatrick:1990a, Gordon:2003l}.
+
+
+
+
+\section{Results}
+\label{sec:results}
+
+An east-facing bow shock structure is detected
+around the star Walborn~2,
+as illustrated in Figure~\ref{fig:muse-acs-multipanel}a.
+The inner edge of the bow shock is traced
+by a sharp ridge of \heii{} \Wav{4686} emission (red),
+while \ariv{} \Wav{4741} emission (green)
+is more extended with a diffuse outer boundary. 
+Nebular emission of the same field in moderate
+and low ionization lines is shown in
+Figure~\ref{fig:muse-acs-multipanel}b and
+there is no evidence of the bow shock in these lines.
+Instead, the low ionization lines
+([\ion{O}{1}], red, and [\ion{S}{2}], green)
+trace the ionization fronts at the surface
+of dense filaments and globules,
+while the moderate ionization line ([\ion{S}{3}], blue)
+traces diffuse ionized gas in the interior of
+the nebula that is largely unrelated to the bow shock. 
+
+Figure~\ref{fig:muse-acs-multipanel}c shows the
+position of the MUSE field (orange box) on a wider scale
+\textit{HST} image of the N66 \hii{} region
+\citep{Nota:2006x}.
+The head of the bow shock is oriented towards
+the bright filament outside of the MUSE field to the West,
+which represents a large scale ionization front
+at the edge of the \hii{} region.
+
+Figure~\ref{fig:muse-acs-multipanel}d shows a zoomed view of
+the \textit{HST} \ha{} image around W~2, compared
+with contours of the bow shock emission.
+The \ha{} brightness does appear to be slightly higher
+within the bow shock contours than just outside it,
+but the effect is very subtle compared with larger
+unrelated variations in the \ha{} brightness.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-he-ratios}
+  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-sii-siii-ne-te}
+  \caption{More profiles}
+  \label{fig:more-profiles}
+\end{figure}
+ 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-ariv-diagnostics-annotated}
+  \caption{
+    Temperature and density diagnostics of the bow shock from \ariv{} line ratios.
+    }
+  \label{fig:ariv-diagnostics}
+\end{figure}
+
+
+\section{Mid-infrared emission from the bow shock}
+\label{sec:mid-infr-emiss}
 
 
 \begin{figure*}
@@ -174,61 +298,6 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
     }
   \label{fig:infrared-multipanel}
 \end{figure*}
-
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figs/ngc346-bow-shock-brightness-cuts}
-  \caption{
-    Emission line surface brightness profiles along an East--West cut across the bow shock,
-    derived from MUSE integral field spectra. 
-    }
-  \label{fig:brightness-cuts}
-\end{figure*}
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-he-ratios}
-  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-sii-siii-ne-te}
-  \caption{More profiles}
-  \label{fig:more-profiles}
-\end{figure}
-
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figs/ngc346-fors1-combo}
-  \caption{
-    Emission line surface brightness profiles and line ratios along a large-scale
-    East--West cut across the entire region, based on FORS1 longslit spectra.
-    The slit is close to the symmetry axis of the bow shock.
-    (a) Temperature-sensitive line ratio \oiii{} 4363/5007.
-    The gray box shows the same inner rim region of the bow shock
-    that is highlighted by a gray box in Fig.~\ref{fig:brightness-cuts}.
-    (b) Selected emission lines from a wide range of ionization stages. 
-    }
-  \label{fig:oiii-ratio}
-\end{figure*}
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-ariv-diagnostics-annotated}
-  \caption{
-    Temperature and density diagnostics of the bow shock from \ariv{} line ratios.
-    }
-  \label{fig:ariv-diagnostics}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-bowshock-T-oiii-ariv}
-  \includegraphics[width=\linewidth]{figs/ngc346-bowshock-den-ariv}
-  \caption{
-    Derived temperature of nebula and bow shock. 
-    }
-  \label{fig:T-oiii-ariv}
-\end{figure}
-
 \begin{figure}
   \centering
   \includegraphics[width=\linewidth]{figs/ngc346-infrared-profiles}
@@ -249,21 +318,38 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
 \end{figure}
 
 
-The principal observational dataset used in this paper is
-an archival integral field spectral cube of NGC~346
-obtained with the MUSE spectrograph \citep{Bacon:2010a, Bacon:2014a}
-on the VLT as part of program 098.D-0211(A) (PI:  W.-R. Hamann). 
-The field of view is \SI{60}{arcsec} times \SI{60}{arcsec} with
-pixel size of \SI{0.2}{arcsec} and estimated seeing
-full-width half maximum (FWHM) width of \SI{0.961}{arcsec}.
-The spectral range is \SI{4595}{\angstrom} to \SI{9366}{\angstrom}
-sampled at \SI{1.25}{\angstrom.pix^{-1}} and the
-spectral resolving power varies from \(R \approx 2000\) in the blue
-to \(R \approx 4000\) in the red.
-We use reduced data from the standard ESO pipeline processing
-\citep{Weilbacher:2020a},
-co-added across multiple observations obtained on \mbox{2016-08-22}
-with a total effective exposure time of \SI{12600}{s}.
+
+
+
+
+
+\section{Longslit observations}
+\label{sec:longsl-observ}
+\begin{figure*}[p]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figs/ngc346-fors1-combo}
+  \caption{
+    Emission line surface brightness profiles and line ratios along a large-scale
+    East--West cut across the entire region, based on FORS1 longslit spectra.
+    The slit is close to the symmetry axis of the bow shock.
+    (a) Temperature-sensitive line ratio \oiii{} 4363/5007.
+    The gray box shows the same inner rim region of the bow shock
+    that is highlighted by a gray box in Fig.~\ref{fig:brightness-cuts}.
+    (b) Selected emission lines from a wide range of ionization stages. 
+    }
+  \label{fig:oiii-ratio}
+\end{figure*}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figs/ngc346-bowshock-T-oiii-ariv}
+  \includegraphics[width=\linewidth]{figs/ngc346-bowshock-den-ariv}
+  \caption{
+    Derived temperature of nebula and bow shock. 
+    }
+  \label{fig:T-oiii-ariv}
+\end{figure}
+
 
 
 
@@ -278,13 +364,6 @@ The eastern side of N66 also shows a ten times higher [\ion{Fe}{3}] / \hb{} rati
 and disturbed kinematics in low-ionization lines such as \sii{}.
 All these are probably due to a foreground supernova remnant SNR~B0057\(-72.2\) \citep{Ye:1991d}
 that overlaps with this part of the nebula \citep{Chu:1988m, Naze:2002q, Danforth:2003m}.
-
-
-
-
-\section{Results}
-\label{sec:results}
-
 
 
 
