@@ -24,6 +24,7 @@
 \renewcommand{\ion}[2]{\setcounter{ionstage}{#2}% 
   \ensuremath{\mathrm{#1\,\scriptstyle\Roman{ionstage}}}}
 \newcommand\hii{\ion{H}{2}}
+\newcommand\hi{\ion{H}{1}}
 \newcommand\heii{\ion{He}{2}}
 \newcommand\hei{\ion{He}{1}}
 \newcommand\siii{[\ion{S}{3}]}
@@ -198,13 +199,15 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
 
 \begin{figure*}
   \centering
-  \includegraphics[width=0.9\linewidth]{figs/ngc346-bow-shock-brightness-cuts}
+  \includegraphics[width=0.9\linewidth]{figs/ngc346-profiles-3-panel}
   \caption{
-    Continuum-subtracted and extinction-corrected
+    (a)~Continuum-subtracted and extinction-corrected
     line surface brightness profiles
     along an East--West cut along the bow shock axis
     of width \SI{4}{arcsec},
     derived from MUSE integral field spectra.
+    The gray box indicates the leading edge of the bow shock emission
+    for comparison with following figures.     
     Thickest lines show the high ionization emission from
     \heii{} \Wav{4686} (blue) and \ariv{} \Wav{4740} (orange).
     Progressively thinner lines show medium ionization emission from
@@ -217,15 +220,22 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
     \SI{1.489e-8}{erg.s^{-1}.cm^{-2}.sr^{-1}}.
     The brightness of medium ionization lines have been scaled
     by factors given in the key, so as to make all the lines
-    approximately coincide at the edges of the graph.
-    The gray box indicates the brightest region of bow shock emission
-    for comparison with following figures. 
+    approximately coincide at the left edge of the gray box.
+    (b)~As panel a but showing the \sii{} density (orange)
+    and \siii{} temperature (blue), together with
+    the brightness profiles of \sii{} \Wav{6731} (red)
+    and \sii{} \Wav{9069} (green) on an arbitrary scale.
+    (c)~As panel a but showing line ratios of
+    \(\heii / \hi\) (blue) and \(\hei / \hi\) (orange).
+    A constant value of 0.1 has been subtracted from the latter
+    for ease of comparison and to emphasise the slight dip
+    in \(\hei / \hi\) at the position of the bow shock. 
     }
   \label{fig:brightness-cuts}
 \end{figure*}
 
-The main observational data used in this paper comprise
-an archival integral field spectral cube of NGC~346
+The primary observational data set used in this paper
+is an archival integral field spectral cube of NGC~346
 obtained with the MUSE spectrograph \citep{Bacon:2010a, Bacon:2014a}
 on the VLT as part of program 098.D-0211(A) (PI:  W.-R. Hamann). 
 The usable field of view is approximately
@@ -294,8 +304,9 @@ position of the MUSE field (orange box) on a wider scale
 \textit{HST} image of the N66 \hii{} region
 \citep{Nota:2006x}.
 The head of the bow shock is oriented towards
-the bright filament outside of the MUSE field to the West,
-which represents a large scale ionization front
+the bright N--S oriented filament that is located
+outside of the MUSE field to the West,
+and which represents a large scale ionization front
 at the edge of the \hii{} region.
 The supernova remnant \snrj{} is centered roughly
 \SI{1}{arcmin} to the East of the \hii{} region,
@@ -307,27 +318,38 @@ the \textit{HST} \ha{} image around W~3, compared
 with contours of the bow shock emission.
 The \ha{} brightness does appear to be slightly higher
 within the bow shock contours than just outside it,
-but the effect is very subtle compared with larger
-unrelated variations in the \ha{} brightness.
+but the effect is very subtle compared with the
+general fluctuations in \ha{} brightness in the nebula.
 
-Figure~\ref{fig:brightness-cuts} shows surface brightness
+Figure~\ref{fig:brightness-cuts}a shows surface brightness
 profiles in multiple emission lines along an East--West
 cut along the bow shock axis.
-The \heii{} emission peaks at about \SI{4}{arcsec}
-from the star with a width (FWHM) of about \SI{2}{arcsec}
+The \heii{} emission peak lies at an offset \SI{4}{arcsec}
+west from the star W~3, with a width (FWHM) of about \SI{2}{arcsec}
 (note that \(\SI{1}{arcsec} \approx \SI{0.3}{pc}\)
 at the distance of the SMC). 
+The \heii{} brightness becomes negative close to the
+star position due to contamination by the photospheric
+absorption line.
+The \ariv{} emission peak lies slightly farther from the star
+(\SI{4.5}{arcsec}) and shows a gradual linear decline with
+\(\text{FWHM} \approx \SI{20}{arcsec}\).
+In both lines, diffuse nebular emission is undetectably small 
+in the region around the bow shock.
+The moderate ionization lines, on the other hand, are dominated
+by the large-scale nebular emission and vary by a factor of only
+\num{1.5} to \num{2} along the entire slit.
+Nonetheless, there is an apparent rise in the brightness
+of these lines at the position of the bow shock
+(see gray box in Figure)
+that tracks the rise and fall of the \ariv{} line.
+This increase amounts to about 50\% of the diffuse nebular emission
+in the case of \oiii{} and the H and He recombination lines
+and about 30\% in the case of \ariii{}.
 
+Figure~\ref{fig:brightness-cuts}b shows density and temperature
+diagnostics
 
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-he-ratios}
-  \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-sii-siii-ne-te}
-  \caption{More profiles}
-  \label{fig:more-profiles}
-\end{figure}
- 
 
 \begin{figure}
   \centering
