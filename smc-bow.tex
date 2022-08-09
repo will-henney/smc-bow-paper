@@ -32,6 +32,7 @@
 \newcommand\oiii{[\ion{O}{3}]}
 \newcommand\ariii{[\ion{Ar}{3}]}
 \newcommand\ariv{[\ion{Ar}{4}]}
+\newcommand\ARIV{[\ION{Ar}{iv}]}
 \newcommand\Raman{\ensuremath{_{\text{Raman}}}}
 \def\th#1#2{\(\theta^{#1}\)\,Ori~#2}
 \newcommand\wn{\ensuremath{\tilde{\nu}}}
@@ -234,6 +235,29 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
   \label{fig:brightness-cuts}
 \end{figure*}
 
+
+\begin{figure}
+  \centering
+  \includegraphics{figs/ionization-potential-table}
+  \caption{
+    Classification of optical emission lines by degree of ionization.
+    The broad ionization zones are defined by the H and He opacity:
+    neutral (\(\chem{H^0} + \chem{He^0}\)),
+    low ionization (\(\chem{H^+} + \chem{He^0}\)),
+    medium ionization (\(\chem{H^+} + \chem{He^+}\)),
+    and high ionization (\(\chem{H^+} + \chem{He^{+2}}\)).
+    Within each zone, the ionization of metals will
+    vary according to the local ionizing flux spectrum
+    and electron density,
+    depending on the ionization energy of each ion.
+    The latter is indicated in the figure for selected elements,
+    together with the range of ionization where different lines
+    will be emitted, assuming that forbidden lines
+    are excited solely by electron collisions,
+    while permitted lines are excited solely by recombinations.
+   }
+  \label{fig:ion-energies}
+\end{figure}
 The primary observational data set used in this paper
 is an archival integral field spectral cube of NGC~346
 obtained with the MUSE spectrograph \citep{Bacon:2010a, Bacon:2014a}
@@ -277,8 +301,12 @@ but reaches \(E(B - V) \approx 1\) along the southern edge
 Figure~\ref{fig:muse-acs-multipanel}b).
 
 
-\section{Results}
+\section{Results from MUSE spectra}
 \label{sec:results}
+
+\subsection{Emission line maps}
+\label{sec:emission-line-maps}
+
 
 An east-facing bow shock structure is detected
 around the star Walborn~3,
@@ -286,11 +314,11 @@ as illustrated in Figure~\ref{fig:muse-acs-multipanel}a.
 The inner edge of the bow shock is traced
 by a sharp ridge of \heii{} \Wav{4686} emission (red),
 while \ariv{} \Wav{4740} emission (green)
-is more extended with a diffuse outer boundary. 
+is more extended and has a diffuse outer boundary. 
 Nebular emission of the same field in moderate
 and low ionization lines is shown in
 Figure~\ref{fig:muse-acs-multipanel}b and
-there is no evidence of the bow shock in these lines.
+there is no clear evidence of the bow shock in these lines.
 Instead, the low ionization lines
 ([\ion{O}{1}], red, and [\ion{S}{2}], green)
 trace the ionization fronts at the surface
@@ -321,13 +349,19 @@ within the bow shock contours than just outside it,
 but the effect is very subtle compared with the
 general fluctuations in \ha{} brightness in the nebula.
 
+\subsection{Brightness profiles along the bow shock axis}
+\label{sec:brightn-prof-along}
+
 Figure~\ref{fig:brightness-cuts}a shows surface brightness
 profiles in multiple emission lines along an East--West
 cut along the bow shock axis.
 The \heii{} emission peak lies at an offset \SI{4}{arcsec}
 west from the star W~3, with a width (FWHM) of about \SI{2}{arcsec}
 (note that \(\SI{1}{arcsec} \approx \SI{0.3}{pc}\)
-at the distance of the SMC). 
+at the distance of the SMC).
+If the \heii{} line is due to recombination of \chem{He^{+2}},
+then a hard  radiation field with \(h\nu > \SI{54.4}{eV}\)
+is required in order to photoionize \chem{He^{+}}.
 The \heii{} brightness becomes negative close to the
 star position due to contamination by the photospheric
 absorption line.
@@ -335,7 +369,7 @@ The \ariv{} emission peak lies slightly farther from the star
 (\SI{4.5}{arcsec}) and shows a gradual linear decline with
 \(\text{FWHM} \approx \SI{20}{arcsec}\).
 In both lines, diffuse nebular emission is undetectably small 
-in the region around the bow shock.
+in the regions adjoining the bow shock.
 The moderate ionization lines, on the other hand, are dominated
 by the large-scale nebular emission and vary by a factor of only
 \num{1.5} to \num{2} along the entire slit.
@@ -347,8 +381,14 @@ This increase amounts to about 50\% of the diffuse nebular emission
 in the case of \oiii{} and the H and He recombination lines
 and about 30\% in the case of \ariii{}.
 
-Figure~\ref{fig:brightness-cuts}b shows density and temperature
-diagnostics
+Figure~\ref{fig:brightness-cuts}b shows even lower ionization
+emission, as traced by \siii{} and \sii{} lines, together
+with electron temperature and density profiles derived
+from the emission line ratios \siii{} \(\Wav{6312} / \Wav{9069}\)
+and \sii{} \(\Wav{6716} / \Wav{6731}\). 
+
+\subsection{\ARIV{} diagnostics}
+\label{sec:ariv-diagnostics}
 
 
 \begin{figure}
