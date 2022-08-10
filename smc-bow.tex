@@ -51,6 +51,7 @@
 \newcommand\lyb{\ensuremath{\text{Ly}\beta}}
 
 \newcommand{\wind}{\ensuremath{_{\text{w}}}}
+\newcommand\snrj{SNR~J\num{0059.4}\num{-7210}}
 
 \begin{document}
 \title{A highly ionized stellar bow shock in the Small Magellanic Cloud}
@@ -165,11 +166,7 @@ with spectral type ON2 III(f*) \citep{Heydari-Malayeri:2010i}.
 Atmosphere models of \citet{Rivero-Gonzalez:2012w}
 
 
-\section{Observations}
-\label{sec:observations}
-
-\newcommand\snrj{SNR~J\num{0059.4}\num{-7210}}
-\begin{figure*}
+\begin{figure*}[p]
   \centering
   \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-4-panel}
   \caption{
@@ -198,7 +195,7 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
   \label{fig:muse-acs-multipanel}
 \end{figure*}
 
-\begin{figure*}
+\begin{figure*}[p]
   \centering
   \includegraphics[width=0.9\linewidth]{figs/ngc346-profiles-3-panel}
   \caption{
@@ -258,6 +255,10 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
    }
   \label{fig:ion-energies}
 \end{figure}
+
+\section{Observations}
+\label{sec:observations}
+
 The primary observational data set used in this paper
 is an archival integral field spectral cube of NGC~346
 obtained with the MUSE spectrograph \citep{Bacon:2010a, Bacon:2014a}
@@ -303,27 +304,36 @@ Figure~\ref{fig:muse-acs-multipanel}b).
 
 \section{Results from MUSE spectra}
 \label{sec:results}
+An east-facing bow shock structure is detected
+around the star Walborn~3,
+as mapped in Figure~\ref{fig:muse-acs-multipanel},
+with emission line brightness profiles shown in
+Figure~\ref{fig:brightness-cuts}.
+The correspondence between different emission lines
+and the ionization state of the gas is illustrated
+in Figure~\ref{fig:ion-energies},
+which explains the definitions of low, medium, and
+high ionization that we employ in this paper.
 
 \subsection{Emission line maps}
 \label{sec:emission-line-maps}
 
-
-An east-facing bow shock structure is detected
-around the star Walborn~3,
-as illustrated in Figure~\ref{fig:muse-acs-multipanel}a.
-The inner edge of the bow shock is traced
-by a sharp ridge of \heii{} \Wav{4686} emission (red),
+Figure~\ref{fig:muse-acs-multipanel}a shows
+that the inner edge of the bow shock is traced
+by a sharp ridge of the highest ionization
+\heii{} \Wav{4686} emission (red),
 while \ariv{} \Wav{4740} emission (green)
 is more extended and has a diffuse outer boundary. 
-Nebular emission of the same field in moderate
+Nebular emission from the same field in medium
 and low ionization lines is shown in
-Figure~\ref{fig:muse-acs-multipanel}b and
-there is no clear evidence of the bow shock in these lines.
+Figure~\ref{fig:muse-acs-multipanel}b,
+from which one sees that 
+there is no clear evidence for the bow shock in these lines.
 Instead, the low ionization lines
 ([\ion{O}{1}], red, and [\ion{S}{2}], green)
 trace the ionization fronts at the surface
 of dense filaments and globules,
-while the moderate ionization line ([\ion{S}{3}], blue)
+while the medium ionization line ([\ion{S}{3}], blue)
 traces diffuse ionized gas in the interior of
 the nebula that is largely unrelated to the bow shock. 
 
@@ -346,7 +356,7 @@ the \textit{HST} \ha{} image around W~3, compared
 with contours of the bow shock emission.
 The \ha{} brightness does appear to be slightly higher
 within the bow shock contours than just outside it,
-but the effect is very subtle compared with the
+but the effect is subtle compared with the
 general fluctuations in \ha{} brightness in the nebula.
 
 \subsection{Brightness profiles along the bow shock axis}
@@ -361,7 +371,8 @@ west from the star W~3, with a width (FWHM) of about \SI{2}{arcsec}
 at the distance of the SMC).
 If the \heii{} line is due to recombination of \chem{He^{+2}},
 then a hard  radiation field with \(h\nu > \SI{54.4}{eV}\)
-is required in order to photoionize \chem{He^{+}}.
+is required in order to photoionize \chem{He^{+}}
+(see Figure~\ref{fig:ion-energies}).
 The \heii{} brightness becomes negative close to the
 star position due to contamination by the photospheric
 absorption line.
@@ -370,22 +381,46 @@ The \ariv{} emission peak lies slightly farther from the star
 \(\text{FWHM} \approx \SI{20}{arcsec}\).
 In both lines, diffuse nebular emission is undetectably small 
 in the regions adjoining the bow shock.
-The moderate ionization lines, on the other hand, are dominated
+The medium ionization lines, on the other hand, are dominated
 by the large-scale nebular emission and vary by a factor of only
 \num{1.5} to \num{2} along the entire slit.
 Nonetheless, there is an apparent rise in the brightness
 of these lines at the position of the bow shock
-(see gray box in Figure)
+(see gray box in Figure~\ref{fig:brightness-cuts})
 that tracks the rise and fall of the \ariv{} line.
 This increase amounts to about 50\% of the diffuse nebular emission
 in the case of \oiii{} and the H and He recombination lines
-and about 30\% in the case of \ariii{}.
+but only about 30\% in the case of \ariii{},
+which is arises from lower ionization conditions than \oiii{},
+as shown in Figure~\ref{fig:ion-energies}.
 
 Figure~\ref{fig:brightness-cuts}b shows even lower ionization
 emission, as traced by \siii{} and \sii{} lines, together
 with electron temperature and density profiles derived
 from the emission line ratios \siii{} \(\Wav{6312} / \Wav{9069}\)
-and \sii{} \(\Wav{6716} / \Wav{6731}\). 
+and \sii{} \(\Wav{6716} / \Wav{6731}\).
+The rise at the bow shock position is very weak 
+in \siii{} (about 15\% of the diffuse nebula brightness)
+and it is completely absent in \sii{}.
+The peaks in the \sii{} profile at offsets of \SI{7}{arcsec}
+and \SI{12}{arcsec} correspond to ionization fronts of
+background globules, as seen in Figure~\ref{fig:muse-acs-multipanel}b.
+The \SI{12}{arcsec} peak is also visible in \siii{}
+and the other medium ionization lines of panel a,
+but with lower contrast.
+
+A broad maximum in \siii{} lies at an offset of \SI{-3}{arcsec}
+and is labeled ``medium-ionization peak'' in the figure.
+It corresponds to whispy \ha{} emission seen in the HST image
+of Figure~\ref{fig:muse-acs-multipanel}d immediately to the left of W~3.
+The same peak is also visible in the other medium ionization lines of
+Figure~\ref{fig:brightness-cuts}a, but the contrast decreases markedly
+as one passes from \siii{}, through \ariii{}, to \oiii{},
+which is a sequence of increasing ionization
+(see Figure~\ref{fig:ion-energies}).
+This is the opposite behavior to what is seen at the position of
+the bow shock, where the order is reversed.
+
 
 \subsection{\ARIV{} diagnostics}
 \label{sec:ariv-diagnostics}
