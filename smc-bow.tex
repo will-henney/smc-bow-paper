@@ -29,9 +29,11 @@
 \newcommand\hei{\ion{He}{1}}
 \newcommand\siii{[\ion{S}{3}]}
 \newcommand\sii{[\ion{S}{2}]}
+\newcommand\neiii{[\ion{Ne}{3}]}
 \newcommand\oiii{[\ion{O}{3}]}
 \newcommand\ariii{[\ion{Ar}{3}]}
 \newcommand\ariv{[\ion{Ar}{4}]}
+\newcommand\siv{[\ion{S}{4}]}
 \newcommand\ARIV{[\ION{Ar}{iv}]}
 \newcommand\Raman{\ensuremath{_{\text{Raman}}}}
 \def\th#1#2{\(\theta^{#1}\)\,Ori~#2}
@@ -269,7 +271,7 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
   \label{fig:ion-energies}
 \end{figure}
 
-\section{Observations}
+\section{MUSE spectral mapping}
 \label{sec:observations}
 
 The primary observational data set used in this paper
@@ -315,7 +317,7 @@ but reaches \(E(B - V) \approx 1\) along the southern edge
 Figure~\ref{fig:muse-acs-multipanel}b).
 
 
-\section{Results from MUSE spectra}
+\subsection{Detection of a high-ionization bow shock}
 \label{sec:results}
 An east-facing bow shock structure is detected
 around the star Walborn~3,
@@ -328,9 +330,7 @@ in Figure~\ref{fig:ion-energies},
 which explains the definitions of low, medium, and
 high ionization that we employ in this paper.
 
-\subsection{Emission line maps}
 \label{sec:emission-line-maps}
-
 Figure~\ref{fig:muse-acs-multipanel}a shows
 that the inner edge of the bow shock is traced
 by a sharp ridge of the highest ionization
@@ -431,10 +431,119 @@ Figure~\ref{fig:brightness-cuts}a, but the contrast decreases markedly
 as one passes from \siii{}, through \ariii{}, to \oiii{},
 which is a sequence of increasing ionization
 (see Figure~\ref{fig:ion-energies}).
-This is the opposite behavior to what is seen at the position of
-the bow shock, where the order is reversed with the
-highest contrast in \oiii{}.
 
+The disparate ionization-dependent behaviors of the three regions are
+summarised in Figure~\ref{fig:emline-excess}, which shows the 
+excess emission relative to the diffuse nebula for the bow shock,
+the medium-ionization peak, and the globule ionization fronts.
+Note that \heii{} and \ariv{} are not included in this figure
+since they have effectively infinite contrast. 
+
+\section{FORS1 longslit observations}
+\label{sec:longsl-observ}
+\begin{figure*}[p]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figs/ngc346-fors1-combo}
+  \caption{
+    Emission line surface brightness profiles and line ratios along a large-scale
+    East--West cut across the entire region, based on FORS1 longslit spectra.
+    The slit is close to the symmetry axis of the bow shock.
+    (a) Temperature-sensitive line ratio \oiii{} 4363/5007.
+    The gray box shows the same inner rim region of the bow shock
+    that is highlighted by a gray box in Fig.~\ref{fig:brightness-cuts}.
+    (b) Selected emission lines from a wide range of ionization stages. 
+    }
+  \label{fig:oiii-ratio}
+\end{figure*}
+
+To complement the MUSE data, we employ longslit optical spectra
+first presented by \citet{Valerdi:2019a}, which were obtained with the
+Focal Reducer Low Dispersion Spectrograph (FORS1)
+on the VLT. One of the EW-oriented slit positions serendipitously crosses
+the W3 bow shock. Although the spectral resolution of these data is
+slightly lower than that of MUSE, the wavelength coverage extends
+further towards the blue, allowing study of additional lines such as
+\oiii{} \Wav{4363} and \neiii{} \Wav{3869}.
+In addition, the slit length of \SI{410}{arcsec} is much longer than
+the MUSE field of view of \SI{60}{arcsec}.
+
+Results from the FORS1 data are shown in Figure~\ref{fig:oiii-ratio}.
+The upper panel shows the temperature-sensitive line ratio
+\oiii{} \Wav{4363} / \Wav{5007}, which is discussed further in section~\ref{sec:electr-dens-temp} below.
+The lower panel shows the surface brightness profiles of selected
+emission lines from a variety of ionization stages
+as a function of position measured in arc seconds from the star W~3
+(positive values to the West).
+The bow shock rim region (indicated by the light gray box)
+is very small on the scale of this plot but is clearly detected
+in the \heii{}, \ariv{}, and \oiii{} profiles.
+However, although the bow shock is the brightest source
+of \heii{} emission 
+within the MUSE field,
+it is not particularly prominent on the larger scales revealed by FORS1.
+Instead, the \heii{} emission (light orange shaded histogram in figure)
+is dominated by extensive bright emission in the East of the region,
+at offsets from \num{-180} to \SI{-50}{arcsec}, which coincides
+with the location of the supernova remnant SNR~B0057\(-72.2\) \citep{Ye:1991d}.
+
+
+
+\section{Mid-infrared emission}
+\label{sec:mid-infr-emiss}
+To supplement the optical data, we use mid-infrared spectral
+imaging from Spitzer/IRS \citep{Houck:2004a}.
+
+
+Lots of this was anticipated by \citet{Contursi:2000f} With ISO
+observations, see their Fig.~13. Quote:
+\textit{``We remark that this region is close
+to the earliest–type star of N66 (OIII(f*)) suggesting that here
+the ISRF is not only very strong but also very hard. This results
+in a complete destruction of the AIB carriers and partially also
+of the smallest VSGs.''}
+
+Also previous Spitzer work by \citet{Whelan:2013d}, but I do not like their Figure~11
+where they plot a the correlation between
+the ratio of \SI{14}{\micron} continuum over \siv{}
+to \siv{} over [\ion{Ne}{2}].
+With no correlation between the three, we would get the observed correlation in the ratios. 
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=\linewidth]{figs/ngc346-spitzer-irs-multi-images}
+  \caption{
+    Spectral imaging of the NGC~346/N66 region with \textit{Spitzer} IRS.
+    Each panel is an RGB combination of three spectral ranges or features. 
+    (a)~Shorter wavelength mid-infrared dust emission:
+    \SI{11.3}{\micron} PAH feature (blue),
+    \SIrange{8}{9}{\micron} continuum (green),
+    \SIrange{13}{14}{\micron} continuum (red).
+    The emission from the bow shock is most prominent in the red channel
+    and is indicated by a white arrow.
+    (b)~Zoom of panel~a showing central core of NGC~346
+    with the star Walborn~3 indicated in blue and 
+    with superimposed white contours of optical \ARIV{} emission.
+    (c)~Longer wavelength mid-infrared dust emission:
+    \SIrange{16}{18}{\micron} continuum (blue),
+    \SIrange{20}{21}{\micron} continuum (green),
+    \SIrange{25}{30}{\micron} continuum (red).
+    In this image the bow shock is most prominent in the blue channel.
+    (d)~Shorter wavelength mid-infrared emission lines:
+    [\ion{Ne}{2}] \SI{12.8}{\micron} (blue),
+    [\ion{Ne}{3}] \SI{15.5}{\micron} (green),
+    [\ion{S}{4}] \SI{10.5}{\micron} (red).
+    In this image the bow shock is most prominent in the red channel.
+    (e)~Longer wavelength mid-infrared emission lines:
+    [\ion{Si}{2}] \SI{34.8}{\micron} (blue),
+    [\ion{S}{3}] \SI{33.4}{\micron} (green),
+    [\ion{S}{3}] \SI{18.7}{\micron} (red).
+    In this image the bow shock is not prominent in any channel.
+    }
+  \label{fig:infrared-multipanel-irs}
+\end{figure*}
+
+\section{Electron density and temperature}
+\label{sec:electr-dens-temp}
 The electron density of low ionization gas
 (orange histogram in Figure~\ref{fig:brightness-cuts}b)
 is calculated from the \sii{} nebular lines
@@ -479,23 +588,6 @@ the approach of \citet{Keenan:1997n}.
 \end{figure}
 
 
-\section{Longslit observations}
-\label{sec:longsl-observ}
-\begin{figure*}[p]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figs/ngc346-fors1-combo}
-  \caption{
-    Emission line surface brightness profiles and line ratios along a large-scale
-    East--West cut across the entire region, based on FORS1 longslit spectra.
-    The slit is close to the symmetry axis of the bow shock.
-    (a) Temperature-sensitive line ratio \oiii{} 4363/5007.
-    The gray box shows the same inner rim region of the bow shock
-    that is highlighted by a gray box in Fig.~\ref{fig:brightness-cuts}.
-    (b) Selected emission lines from a wide range of ionization stages. 
-    }
-  \label{fig:oiii-ratio}
-\end{figure*}
-
 \begin{figure}
   \centering
   \includegraphics[width=\linewidth]{figs/ngc346-bowshock-T-oiii-ariv}
@@ -523,87 +615,45 @@ All these are probably due to a foreground supernova remnant SNR~B0057\(-72.2\) 
 that overlaps with this part of the nebula \citep{Chu:1988m, Naze:2002q, Danforth:2003m, Maggi:2019q, Matsuura:2022v}.
 
 
-\section{Mid-infrared emission}
-\label{sec:mid-infr-emiss}
-
-Lots of this was anticipated by \citet{Contursi:2000a} with ISO
-observations, see their Fig.~13. Quote:
-\textit{``We remark that this region is close
-to the earliest–type star of N66 (OIII(f*)) suggesting that here
-the ISRF is not only very strong but also very hard. This results
-in a complete destruction of the AIB carriers and partially also
-of the smallest VSGs.''}
-
-\begin{figure*}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-spitzer-irs-multi-images}
-  \caption{
-    Spectral imaging of the NGC~346/N66 region with \textit{Spitzer} IRS.
-    Each panel is an RGB combination of three spectral ranges or features. 
-    (a)~Shorter wavelength mid-infrared dust emission:
-    \SI{11.3}{\micron} PAH feature (blue),
-    \SIrange{8}{9}{\micron} continuum (green),
-    \SIrange{13}{14}{\micron} continuum (red).
-    The emission from the bow shock is most prominent in the red channel
-    and is indicated by a white arrow.
-    (b)~Zoom of panel~a showing central core of NGC~346
-    with the star Walborn~3 indicated in blue and 
-    with superimposed white contours of optical \ARIV{} emission.
-    (c)~Longer wavelength mid-infrared dust emission:
-    \SIrange{16}{18}{\micron} continuum (blue),
-    \SIrange{20}{21}{\micron} continuum (green),
-    \SIrange{25}{30}{\micron} continuum (red).
-    In this image the bow shock is most prominent in the blue channel.
-    (d)~Shorter wavelength mid-infrared emission lines:
-    [\ion{Ne}{2}] \SI{12.8}{\micron} (blue),
-    [\ion{Ne}{3}] \SI{15.5}{\micron} (green),
-    [\ion{S}{4}] \SI{10.5}{\micron} (red).
-    In this image the bow shock is most prominent in the red channel.
-    (e)~Longer wavelength mid-infrared emission lines:
-    [\ion{Si}{2}] \SI{34.8}{\micron} (blue),
-    [\ion{S}{3}] \SI{33.4}{\micron} (green),
-    [\iona{S}{3}] \SI{18.7}{\micron} (red).
-    In this image the bow shock is not prominent in any channel.
-    }
-  \label{fig:infrared-multipanel-irs}
-\end{figure*}
 
 
-\begin{figure*}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-infrared-multipanel}
-  \caption{
-    Panoramic view of the NGC~346/N66 region at infrared wavelengths:
-    (a)~Short wavelength mid-infrared (\num{3.6} to \SI{8}{\um});
-    (b)~Longer wavelength mid-infrared (\num{12} to \SI{100}{\um});
-    (c)~Far-infrared (\num{70} to \SI{150}{\um});
-    (d)~Zoomed view of panel~b.
-    Images are from satellite observatories as follows:
-    \textit{Spitzer} IRAC \num{3.6}, \num{4.5}, \SI{8}{\um});
-    \textit{WISE} \SI{12}{\um};
-    \textit{Spitzer} MIPS \num{24}, \SI{70}{\um};
-    \textit{Herschel} PACS \num{100}, \SI{150}{\um}.
-    }
-  \label{fig:infrared-multipanel}
-\end{figure*}
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-infrared-profiles}
-  \caption{
-    East--west brightness profile cuts in various infrared bands. 
-    }
-  \label{fig:infrared-profiles}
-\end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figs/ngc346-infrared-sed}
-  \caption{
-    Spectral energy distribution of bow shock (large symbols and downward arrows)
-    and background nebula small symbols joined by dashed line.
-    }
-  \label{fig:infrared-sed}
-\end{figure}
+
+% \begin{figure*}
+%   \centering
+%   \includegraphics[width=\linewidth]{figs/ngc346-infrared-multipanel}
+%   \caption{
+%     Panoramic view of the NGC~346/N66 region at infrared wavelengths:
+%     (a)~Short wavelength mid-infrared (\num{3.6} to \SI{8}{\um});
+%     (b)~Longer wavelength mid-infrared (\num{12} to \SI{100}{\um});
+%     (c)~Far-infrared (\num{70} to \SI{150}{\um});
+%     (d)~Zoomed view of panel~b.
+%     Images are from satellite observatories as follows:
+%     \textit{Spitzer} IRAC \num{3.6}, \num{4.5}, \SI{8}{\um});
+%     \textit{WISE} \SI{12}{\um};
+%     \textit{Spitzer} MIPS \num{24}, \SI{70}{\um};
+%     \textit{Herschel} PACS \num{100}, \SI{150}{\um}.
+%     }
+%   \label{fig:infrared-multipanel}
+% \end{figure*}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\linewidth]{figs/ngc346-infrared-profiles}
+%   \caption{
+%     East--west brightness profile cuts in various infrared bands. 
+%     }
+%   \label{fig:infrared-profiles}
+% \end{figure}
+
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\linewidth]{figs/ngc346-infrared-sed}
+%   \caption{
+%     Spectral energy distribution of bow shock (large symbols and downward arrows)
+%     and background nebula small symbols joined by dashed line.
+%     }
+%   \label{fig:infrared-sed}
+% \end{figure}
 
 \begin{figure}
   \centering
