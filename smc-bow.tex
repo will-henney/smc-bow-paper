@@ -1,23 +1,66 @@
-\RequirePackage{amsmath}
-\documentclass[twocolumn, times]{aastex631}
+\documentclass[useAMS, usenatbib, a4paper]{mnras}
+\pdfsuppresswarningpagegroup=1
 \usepackage[spanish,es-minimal,english]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{natbib}
-%\usepackage{microtype}
-\usepackage{hyperref}
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage[normalem]{ulem}
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+\usepackage{gensymb}
+%\usepackage{microtype} % Activate for final version maybe
 \usepackage{savesym}
 \savesymbol{tablenum}
+\usepackage{hyperref}
+\hypersetup{colorlinks=True, linkcolor=blue!50!black, citecolor=black,
+  urlcolor=blue!50!black}
 \usepackage{siunitx}
 \restoresymbol{SIX}{tablenum}
-\usepackage[varg]{newtxmath}
+\usepackage{etoolbox}
+\robustify\bfseries
+\robustify\itshape
 \usepackage{newtxtext}
+\usepackage[varg,varvw,smallerops]{newtxmath}
 \usepackage{booktabs}
+\usepackage{enumerate}
 \usepackage{array}   % for \newcolumntype macro
 \newcolumntype{L}{>{$}l<{$}} % math-mode version of lrc column types
 \newcolumntype{R}{>{$}r<{$}} 
 \newcolumntype{C}{>{$}c<{$}} 
+\usepackage{ragged2e}
+% define a raggedright column with hyphenation support
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
 
-\bibliographystyle{aasjournal}
+
+\bibliographystyle{mnras}
+
+\sisetup{
+  % explicit "+" is useful for velocities
+  retain-explicit-plus = true,
+  % prefer 10^6 over 1 x 10^6
+  print-unity-mantissa = false,
+  % Use x +/- e instead of x(e)  
+  uncertainty-mode = separate,
+  % Use 2 +/- 1 km/s instead of (2 +/- 1) km/s 
+  separate-uncertainty-units = single,
+  % use multiple uncertainty types for photometric and extinction errors
+  uncertainty-descriptors = {rand, sys},
+  uncertainty-descriptor-mode = subscript,
+  % Make sure to use Oxford comma with lists
+  list-final-separator = {, \text{and}\ },
+  % Make sure to pick up bold font when used in section heading for instance
+  reset-text-series = false,
+  text-series-to-math = true,
+}
+\DeclareSIUnit\msun{\text{M\ensuremath{_\odot}}}
+\DeclareSIUnit\lsun{\text{L\ensuremath{_\odot}}}
+\DeclareSIUnit\rsun{\text{R\ensuremath{_\odot}}}
+\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\kms{\kilo\meter\per\second}
+\DeclareSIUnit\pcc{\per\centi\meter\cubed}
+\DeclareSIUnit\erg{\text{erg}}
+\DeclareSIUnit\cgsflux{\erg\per\second\per\centi\meter\squared}
 
 \newcommand\ION[2]{#1\,\scalebox{0.9}[0.8]{\uppercase{#2}}}
 \newcounter{ionstage}
@@ -30,6 +73,7 @@
 \newcommand\siii{[\ion{S}{3}]}
 \newcommand\sii{[\ion{S}{2}]}
 \newcommand\neiii{[\ion{Ne}{3}]}
+\newcommand\neii{[\ion{Ne}{2}]}
 \newcommand\oiii{[\ion{O}{3}]}
 \newcommand\ariii{[\ion{Ar}{3}]}
 \newcommand\ariv{[\ion{Ar}{4}]}
@@ -56,44 +100,65 @@
 \newcommand{\wind}{\ensuremath{_{\text{w}}}}
 \newcommand\snrj{SNR~J\num{0059.4}\num{-7210}}
 
-\begin{document}
-\title{A highly ionized stellar bow shock in the Small Magellanic Cloud}
-\shorttitle{Highly ionized bow shock in LMC}
-\author[0000-0001-6208-9109]{William J. Henney}
-\affiliation{%
-  \foreignlanguage{spanish}{Instituto de Radioastronomía y
-    Astrofísica, Universidad Nacional Autónoma de México, Apartado
-    Postal 3-72, 58090 Morelia, Michaoacán, Mexico}
-}
-\email{w.henney@irya.unam.mx}
-\correspondingauthor{William J. Henney}
+% WJH 2025-08-25 : Try to tweak the figure placement.
+% - Try to allow some float-only pages so that the figures end up closer to the text
+% that describes them
+\renewcommand{\topfraction}{0.7}    % max fraction of floats at top 
+\renewcommand{\textfraction}{0.2}   % min fraction of text in column
+\renewcommand{\floatpagefraction}{0.7} 
+\renewcommand{\dbltopfraction}{0.7}
+\renewcommand{\dblfloatpagefraction}{0.7}
+% allow more floats per page 
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
 
-\author[0000-0002-5456-4472]{S. Jane Arthur}
-\affiliation{%
+\title[Highly ionized bow shock in LMC]{
+  A highly ionized stellar bow shock in the Small Magellanic Cloud
+}
+\newcommand\ORCID[1]{}
+\newcommand\correspondingauthor[1]{}
+\newcommand\irya{%
   \foreignlanguage{spanish}{Instituto de Radioastronomía y
     Astrofísica, Universidad Nacional Autónoma de México, Apartado
     Postal 3-72, 58090 Morelia, Michaoacán, Mexico}
 }
-\author[0000-0001-8249-2317]{M. Valerdi}
-\affiliation{%
+\newcommand\inaoe{%
   \foreignlanguage{spanish}{%
     Instituto Nacional de Astrofísica, Óptica y Electrónica,
     Luis Enrique Erro \#1, Tonantzintla, 72840 Puebla, México}
 }
-
-\author[0000-0002-5406-0813]{Jesús A. Toalá}
-\affiliation{%
-  \foreignlanguage{spanish}{Instituto de Radioastronomía y
-    Astrofísica, Universidad Nacional Autónoma de México, Apartado
-    Postal 3-72, 58090 Morelia, Michaoacán, Mexico}
-}
-
-\author[0000-0002-6091-7924]{Peter Zeidler}
-\affiliation{%
+\newcommand\aura{%
   AURA for the European Space Agency (ESA),
   ESA Office, Space Telescope Science Institute,
   3700 San Martin Drive, Baltimore, MD 21218, USA
 }
+
+
+\author[Henney et al.]{
+  William J. Henney\ORCID{0000-0001-6208-9109}\textsuperscript{1}%
+  \thanks{w.henney@irya.unam.mx},
+  S. J. Arthur\ORCID{0000-0002-5456-4472}\textsuperscript{1},
+  M. Valerdi\ORCID{0000-0001-8249-2317}\textsuperscript{2},
+  Jesús A. Toalá\ORCID{0000-0002-5406-0813}\textsuperscript{1},
+  Peter Zeidler\ORCID{0000-0002-6091-7924}\textsuperscript{3}
+  \\
+  \textsuperscript{1}\irya\\
+  \textsuperscript{2}\inaoe\\
+  \textsuperscript{3}\aura\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2025}
+
+\begin{document}
+
+\date{Submitted: \today}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+\label{firstpage}
 
 \begin{abstract}
   We report the discovery of a parsec-scale stellar bow shock
@@ -108,10 +173,9 @@
   of the stellar wind with streaming motions of the
   photoionized gas within the N66 \ion{H}{2} region. 
 \end{abstract}
-
-\keywords{Atomic physics; Circumstellar matter; Stars: winds, outflows}
-
-%\object{M42}
+\begin{keywords}
+  Atomic physics -- Circumstellar matter -- Stars: winds, outflow
+\end{keywords}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -181,8 +245,16 @@ with spectral type ON2 III(f*) \citep{Heydari-Malayeri:2010i}.
 
 Atmosphere models of \citet{Rivero-Gonzalez:2012w}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figs/ngc346-ZZ-multi-map-annotated}
+  \caption{
+    Emission line maps of the core of NGC~346 derived from the MUSE data cube.
+  }
+  \label{fig:ngc346-ZZ-multimap}
+\end{figure}
 
-\begin{figure*}[p]
+\begin{figure*}
   \centering
   \includegraphics[width=\linewidth]{figs/ngc346-bow-shock-4-panel}
   \caption{
@@ -211,9 +283,9 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
   \label{fig:muse-acs-multipanel}
 \end{figure*}
 
-\begin{figure*}[p]
+\begin{figure}
   \centering
-  \includegraphics[width=0.9\linewidth]{figs/ngc346-profiles-3-panel}
+  \includegraphics[width=\linewidth]{figs/ngc346-profiles-3-panel}
   \caption{
     (a)~Continuum-subtracted and extinction-corrected
     line surface brightness profiles
@@ -246,7 +318,7 @@ Atmosphere models of \citet{Rivero-Gonzalez:2012w}
     in \(\hei / \hi\) at the position of the bow shock. 
     }
   \label{fig:brightness-cuts}
-\end{figure*}
+\end{figure}
 
 
 \begin{figure}
@@ -442,9 +514,9 @@ since they have effectively infinite contrast.
 
 \section{FORS1 longslit observations}
 \label{sec:longsl-observ}
-\begin{figure*}[p]
+\begin{figure}
   \centering
-  \includegraphics[width=0.9\linewidth]{figs/ngc346-fors1-combo}
+  \includegraphics[width=0.9\linewidth]{figs/ngc346-fors1-profiles-annotated}
   \caption{
     Emission line surface brightness profiles and line ratios along a large-scale
     East--West cut across the entire region, based on FORS1 longslit spectra.
@@ -455,7 +527,7 @@ since they have effectively infinite contrast.
     (b) Selected emission lines from a wide range of ionization stages. 
     }
   \label{fig:oiii-ratio}
-\end{figure*}
+\end{figure}
 
 To complement the MUSE data, we employ longslit optical spectra
 first presented by \citet{Valerdi:2019a}, which were obtained with the
@@ -539,7 +611,7 @@ the ratio of \SI{14}{\micron} continuum over \siv{}
 to \siv{} over [\ion{Ne}{2}].
 With no correlation between the three, we would get the observed correlation in the ratios. 
 
-\begin{figure*}
+\begin{figure}
   \centering
   \includegraphics[width=\linewidth]{figs/ngc346-spitzer-irs-multi-images}
   \caption{
@@ -571,7 +643,7 @@ With no correlation between the three, we would get the observed correlation in 
     In this image the bow shock is not prominent in any channel.
     }
   \label{fig:infrared-multipanel-irs}
-\end{figure*}
+\end{figure}
 
 \section{Electron density and temperature}
 \label{sec:electr-dens-temp}
@@ -700,7 +772,7 @@ that overlaps with this part of the nebula \citep{Chu:1988m, Naze:2002q, Danfort
 
 \begin{figure*}
   \centering
-  \includegraphics[width=\linewidth]{figs/midinfrared-ratio-ratio-plots-3x3-zones}
+  \includegraphics[width=\linewidth]{figs/ngc346-midinfrared-ratio-ratio-annotated}
   \caption{
     Mid-infrared ratio-ratio correlations for different spatial zones in NGC~346. 
     }
@@ -728,13 +800,25 @@ bright hii regions.
 \section{Conclusions}
 \label{sec:conclusions}
 
-\begin{acknowledgments}
-  Thank you.
-\end{acknowledgments}
+\section*{Acknowledgements}
+We gratefully acknowledge financial support provided by
+\foreignlanguage{spanish}{%
+  Dirección General de Asuntos del Personal Académico,
+  Universidad Nacional Autónoma de México},
+through grants
+``\foreignlanguage{spanish}{%
+  Programa de Apoyo a Proyectos de Investigación
+  e Inovación Tecnológica IN109823 and XXXXXXX}''.
 
-\facilities{VLT:Yepun (MUSE)}
+
+% \facilities{VLT:Yepun (MUSE)}
 
 \bibliography{smc-bow-refs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bsp
+
+\label{lastpage}
+
 
 \end{document}
 
